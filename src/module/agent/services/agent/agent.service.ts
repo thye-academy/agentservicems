@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import OpenAI from 'openai';
+import { envs } from 'src/config/envs';
 
 @Injectable()
 export class AgentService {
@@ -7,7 +8,7 @@ export class AgentService {
 
   constructor() {
     this.openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: envs.openAIApiKey,
     });
   }
 
